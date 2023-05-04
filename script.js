@@ -59,14 +59,14 @@ window.onload = function () {
   function displayNotes() {
     let showNote = document.querySelectorAll('.description');
     showNote.forEach (function (note) {
-        const hourId = this.parentNode.getAttribute('id').replace('hour-', '');
+        const hourId = note.parentNode.getAttribute('id').replace('hour-', '');
   //how to get back to the parent Id
         var localHour = localStorage.getItem(hourId);
-      this.textContent(localHour)
+      note.textContent = localHour;
         console.log (hourId);
      
    
-    })
+    }, this)
   }
   displayNotes ()
   // TODO: Add code to get any user input that was saved in localStorage and set
