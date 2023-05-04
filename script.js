@@ -55,20 +55,20 @@ window.onload = function () {
       timeBlock.classList.remove('present');
     }
   });
-//displaying local storage
-  function displayNotes() {
-    let showNote = document.querySelectorAll('.description');
-    showNote.forEach (function (note) {
-        const hourId = note.parentNode.getAttribute('id').replace('hour-', '');
-  //how to get back to the parent Id
-        var localHour = localStorage.getItem(hourId);
-      note.textContent = localHour;
-        console.log (hourId);
-     
-   
-    }, this)
-  }
-  displayNotes ()
+
+  // Loop through each time-block element
+document.querySelectorAll('.time-block').forEach((timeBlock) => {
+  // Get the id attribute of the time-block element
+  const timeBlockId = timeBlock.getAttribute('id');
+
+  // Get the saved user input from localStorage
+  const userInput = localStorage.getItem(timeBlockId);
+
+  // Set the value of the corresponding textarea element
+  const textarea = timeBlock.querySelector('textarea');
+  textarea.value = userInput;
+});
+
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
