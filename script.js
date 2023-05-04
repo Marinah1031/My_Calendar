@@ -9,48 +9,70 @@ window.onload = function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //;
-  const saveButton = document.querySelector('.saveBtn');
-  saveButton.addEventListener('click', function() {
-    const hour = this.parentNode.getAttribute('id');
-    const description = this.previousElementSibling.value;
-    localStorage.setItem(hour, description);
-  });
+
+  const saveButton = document.querySelectorAll('.saveBtn');
+
+  saveButton.forEach (function (btn) {
+    btn.addEventListener('click', function(event) {
+      
+      const hour = this.parentNode.getAttribute('id');
+      const description = this.previousElementSibling.value;
+      localStorage.setItem(hour, description);
+      console.log (hour);
+      console.log (description);
+    });
+  })
+  
 };
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  //
+  // Selecting the time blocks in the calendar
  let timeBlocks = document.querySelectorAll('.time-block');
+ //this sets the label for the current hour
   let currentHour = dayjs().hour();
   timeBlocks.forEach(timeBlock => {
+    //the hour is taking the id
     const hour = parseInt(timeBlock.getAttribute('id').replace('hour-', ''));
+    //indicating whether the hour currently is less or greater than the local time,
     if (hour < currentHour) {
+      //if less categorize as past
       timeBlock.classList.add('past');
+      timeBlock.classList.remove('present');
+      timeBlock.classList.remove('future');
     } else if (hour === currentHour) {
+      //current = present
+      
       timeBlock.classList.add('present');
+      timeBlock.classList.remove('past');
+      timeBlock.classList.remove('future');
     } else {
+      //after = future
       timeBlock.classList.add('future');
+      timeBlock.classList.remove('past');
+      timeBlock.classList.remove('present');
     }
   });
-
+//displaying local storage
+  function displayNotes() {
+    let showNote = document.querySelectorAll('.description');
+    showNote.forEach (function (note) {
+        const hourId = this.parentNode.getAttribute('id').replace('hour-', '');
+  //how to get back to the parent Id
+        var localHour = localStorage.getItem(hourId);
+      this.textContent(localHour)
+        console.log (hourId);
+     
+   
+    })
+  }
+  displayNotes ()
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-  timeBlocks = document.querySelectorAll('.time-block');
-  currentHour = dayjs().hour();
-  timeBlocks.forEach(timeBlock => {
-    const hour = parseInt(timeBlock.getAttribute('id').replace('hour-', ''));
-    if (hour < currentHour) {
-      timeBlock.classList.add('past');
-    } else if (hour === currentHour) {
-      timeBlock.classList.add('present');
-    } else {
-      timeBlock.classList.add('future');
-    }
-  });
 
   // TODO: Add code to display the current date in the header of the page.
 
