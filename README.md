@@ -21,6 +21,7 @@ The timeblocks for the past/present/and future hours are color coded with grey, 
 ![Screenshot (50)](https://user-images.githubusercontent.com/125934804/236361026-6e21d0e7-5f55-40a0-a618-d9ebc1ce0c17.png)
 
 ### After being saved, it stores it into the local storage and will remember once refreshed
+- there is a warning sign that shows up, but the instructor and TA's have informed me this could be ignored because it has something to do with cookies. 
 ![Screenshot (52)](https://user-images.githubusercontent.com/125934804/236361065-ae9e5d05-e860-4f76-bce4-bfa78127fd02.png)
 
 ### The local storage is viewed upon.
