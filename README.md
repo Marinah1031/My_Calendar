@@ -28,10 +28,10 @@ The timeblocks for the past/present/and future hours are color coded with grey, 
 ![Screenshot (53)](https://user-images.githubusercontent.com/125934804/236361103-a07bdfb1-5572-4fc5-bb67-a24b9f570d5e.png)
 
 ## Key Notes:
--using functions of if/else, and conditionals. 
--using a localSotrage function to save items once refreshed.
--using jquery to relate real-world events to the deployed webpage
--the conditionals along with the jquery allows it to update as the time changes.
+- using functions of if/else, and conditionals. 
+- using a localSotrage function to save items once refreshed.
+- using jquery to relate real-world events to the deployed webpage
+- the conditionals along with the jquery allows it to update as the time changes.
 
 ## Challenge was accomplished through the help of these people.
 - Professor Jared Kotoff for explaining local storage further.
