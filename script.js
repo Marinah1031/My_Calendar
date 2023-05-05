@@ -11,12 +11,13 @@ window.onload = function () {
   //;
 
   const saveButton = document.querySelectorAll('.saveBtn');
-
+//adding a save button function that allows it to occur when clicked
   saveButton.forEach (function (btn) {
     btn.addEventListener('click', function(event) {
       
       const hour = this.parentNode.getAttribute('id');
       const description = this.previousElementSibling.value;
+      //setting hour and description in local storage
       localStorage.setItem(hour, description);
       console.log (hour);
       console.log (description);
