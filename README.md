@@ -16,6 +16,16 @@ The timeblocks for the past/present/and future hours are color coded with grey, 
 - allowing the local storage to take place so once the page is refreshed, the data that is inputed will not disapear, but get saved, as the icon suggests. 
 ![Screenshot (48)](https://user-images.githubusercontent.com/125934804/236351811-e642579f-a9e4-4e3f-bfc9-980b779d3e16.png)
 
+# Deployed Website
+### When opened it has open slots for your todo list to go inside
+![Screenshot (50)](https://user-images.githubusercontent.com/125934804/236361026-6e21d0e7-5f55-40a0-a618-d9ebc1ce0c17.png)
+
+### After being saved, it stores it into the local storage and will remember once refreshed
+![Screenshot (52)](https://user-images.githubusercontent.com/125934804/236361065-ae9e5d05-e860-4f76-bce4-bfa78127fd02.png)
+
+### The local storage is viewed upon.
+![Screenshot (53)](https://user-images.githubusercontent.com/125934804/236361103-a07bdfb1-5572-4fc5-bb67-a24b9f570d5e.png)
+
 ## Key Notes:
 -using functions of if/else, and conditionals. 
 -using a localSotrage function to save items once refreshed.
